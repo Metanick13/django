@@ -1,0 +1,637 @@
+/* Общие стили для всего сайта */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #001533; /* Очень темный синий - основной фон */
+    color: #A9F7FF; /* Очень светлый синий для основного текста на темном фоне, чтобы хорошо читался на темном фоне */
+    /* background-image: url("{% static 'company_website/img/background.jpg' %}"); */ /* Фоновое изображение (закомментировано) */
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Стили для верхней панели (header-top) */
+.header-top { background-color: #002667; /* Темный синий для верхней полосы */ color: #A9F7FF; padding: 0.5em 0; font-size: 0.9em; }
+.container-header-top { width: 80%; margin: auto; display: flex; justify-content: space-between; align-items: center; }
+.contact-info a { color: #A9F7FF; text-decoration: none; margin-right: 20px; }
+.contact-info a:hover { text-decoration: underline; color: #84E6FC; /* Светло-голубой при наведении */}
+
+/* Стили для кнопки "Заказать звонок" */
+.call-button { background-color: #2196DB; /* Яркий синий для кнопки */ color: #A9F7FF; padding: 8px 15px; border-radius: 5px; text-decoration: none; font-weight: bold; transition: background-color 0.3s ease; }
+.call-button:hover { background-color: #0652A8; /* Более темный синий при наведении */ }
+
+/* Стили для основной шапки (header) */
+header {
+    background-color: #002667; /* Темный синий для шапки */
+    color: #A9F7FF;
+    padding: 0.5em 0; /* Уменьшаем вертикальный паддинг */
+    text-align: center;
+    position: sticky; /* Делаем шапку "липкой" */
+    top: 0; /* Прилипает к верхней части экрана */
+    width: 100%; /* Занимает всю ширину */
+    z-index: 1000; /* Гарантируем, что шапка будет поверх другого контента */
+}
+
+/* Стили для навигационного меню */
+nav ul { list-style: none; padding: 0; display: flex; justify-content: center; }
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+    background-color: #FFFFFF; /* Белый цвет для плашек навигации */
+    padding: 3px 10px; /* Еще уменьшаем паддинг для меньшей высоты */
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+nav ul li a { color: #001533; text-decoration: none; font-weight: bold; }
+nav ul li a:hover { text-decoration: underline; background-color: #f0f0f0; /* Чуть более темный белый при наведении */}
+
+/* Стили для основного контейнера контента */
+.container { width: 80%; margin: auto; overflow: hidden; padding: 20px 0; background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон для контента */ border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); margin-top: 20px; color: #001533; /* Устанавливаем основной цвет текста в контейнере */ }
+
+/* Стили для футера (нижней части сайта) */
+footer {
+    background-color: transparent; /* Убран задний фон футера */
+    color: #001533; /* Изменен на очень темный синий для текста футера */
+    padding: 2em 0;
+    font-size: 0.9em;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Позволяет секциям переноситься на новую строку на маленьких экранах */
+    align-items: flex-start;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 250px; /* Минимальная ширина секции футера */
+    margin: 1em;
+}
+
+.footer-section h3 {
+    color: #001533; /* Изменен на очень темный синий для заголовков в футере */
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #39CCE6; /* Акцентный бирюзовый для полоски под заголовком */
+}
+
+.footer-section p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    background-color: transparent; /* Убираем фон для элементов списка в футере */
+    box-shadow: none;
+    padding: 0;
+}
+
+.footer-section ul li a {
+    color: #001533; /* Изменен на очень темный синий для ссылок футера */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #000D22; /* синий при наведении */
+    text-decoration: underline;
+    background-color: transparent;
+}
+
+.footer-section .contact-info p i {
+    margin-right: 10px;
+    color: #001533; /* Изменен на очень темный синий для иконок */
+}
+
+/* Медиа-запросы для адаптивности футера */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-section {
+        margin: 1em 0;
+        text-align: center;
+    }
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* Стили для списков */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+ul li {
+    background-color: #f8f8f8; /* Светлый фон для элементов списка */
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    color: #001533; /* Цвет текста в рамках */
+}
+ul li h2 {
+    color: #001533; /* Цвет заголовков H2 в элементах списка */
+    margin-top: 0;
+}
+ul li p {
+    line-height: 1.6;
+    color: #001533; /* Цвет текста параграфов в элементах списка */
+}
+
+/* Стили для сетки услуг */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Стили для карточек услуг */
+.service-card {
+    background-color: #fff; /* Белый фон для карточек услуг */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #001533; /* Цвет текста в карточках услуг */
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h2 {
+    color: #001533; /* Цвет заголовков H2 в карточках услуг */
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: #001533; /* Цвет текста параграфов в карточках услуг */
+    margin-bottom: 20px;
+}
+
+/* Стили для кнопки "Подробнее" в карточках услуг */
+.learn-more-button {
+    display: inline-block;
+    background-color: #2196DB; /* Яркий синий для кнопки */
+    color: #A9F7FF; /* Очень светлый синий для текста кнопки */
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.learn-more-button:hover {
+    background-color: #0652A8; /* Более темный синий при наведении */
+}
+
+/* Дополнительно: отключаем подчёркивание у кликабельных карточек */
+.service-card { text-decoration: none; }
+.service-card:hover { text-decoration: none; }
+
+/* Стили для логотипа в навигации */
+.logo {
+    height: 90px; /* Еще больше увеличена высота логотипа */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/* ВЕРХНЯЯ ПЛАШКА — трехзонная сетка и элементы */
+.container-header-top { width: 90%; max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: center; gap: 10px; }
+.top-left { display: flex; align-items: center; gap: 14px; }
+.top-center { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.top-right { display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+.top-logo { height: 72px; width: auto; }
+.top-phone { color: #A9F7FF; text-decoration: none; font-weight: 600; }
+.top-phone:hover { color: #84E6FC; }
+/* Текстовая ссылка «Кодекс» слева от логотипа */
+.code-link { color: #A9F7FF; text-decoration: none; font-weight: 600; }
+.code-link:hover { color: #84E6FC; text-decoration: underline; }
+/* Верхние текстовые ссылки вместо кнопок */
+.top-link { color: #A9F7FF; text-decoration: none; font-weight: 600; padding: 4px 8px; border-radius: 6px; }
+.top-link:hover { color: #D7FAFF; background: rgba(255,255,255,0.08); }
+@media (max-width: 900px) { .container-header-top { grid-template-columns: 1fr; } .top-left, .top-right { justify-content: center; } }
+
+/* Выпадающее меню «Услуги» */
+.services-dropdown { position: relative; }
+.services-dropdown .services-menu { display: none; position: absolute; right: 0; top: 110%; background: #fff; color: #001533; border-radius: 8px; box-shadow: 0 8px 24px rgba(0,0,0,0.18); min-width: 260px; padding: 8px; z-index: 1100; }
+.services-dropdown:hover .services-menu { display: block; }
+.services-dropdown .services-menu a { display: block; padding: 10px 12px; color: #001533; text-decoration: none; border-radius: 6px; }
+.services-dropdown .services-menu a:hover { background: #f3f6fa; }
+
+/* Сообщения Django */
+.django-messages { list-style: none; padding: 0; margin: 15px 0 0; }
+.django-messages .message { padding: 10px 12px; border-radius: 6px; margin-bottom: 8px; }
+.django-messages .message.success { background: #e6ffed; color: #044a13; border: 1px solid #a7f3d0; }
+.django-messages .message.error { background: #ffe6e6; color: #7f1d1d; border: 1px solid #fecaca; }
+
+/* Главная: HERO и секции */
+.home-hero { background: linear-gradient(120deg, #002667, #001533); color: #A9F7FF; padding: 60px 20px; text-align: center; border-radius: 12px; box-shadow: 0 6px 18px rgba(0,0,0,0.25); }
+.home-hero h1 { margin: 0 0 10px; font-size: 2.2em; color: #ffffff; }
+.home-hero p { margin: 0 0 18px; color: #ffffff; }
+.home-actions { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+
+.quick-services { margin-top: 24px; }
+.quick-services h2 { color: #001533; text-align: center; }
+.quick-services .service-card { text-align: left; }
+.quick-services .service-card h2 { margin-bottom: 8px; }
+.quick-services .service-card p { margin: 0; }
+
+.facts { margin-top: 28px; background: #fff; color: #001533; border-radius: 8px; padding: 20px; }
+.facts-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+.facts-list li { background: #f3f6fa; box-shadow: none; padding: 14px; margin: 0; }
+
+.process { margin-top: 28px; background: #fff; color: #001533; border-radius: 8px; padding: 20px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; }
+.step { background: #f8f8f8; border-radius: 8px; padding: 16px; position: relative; }
+.step .num { position: absolute; top: -10px; left: -10px; background: #2196DB; color: #fff; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+
+.team { margin-top: 28px; background: #fff; color: #001533; border-radius: 8px; padding: 20px; text-align: center; }
+
+.app-promo { margin-top: 28px; background: linear-gradient(120deg, #001533, #002667); color: #D7FAFF; border-radius: 8px; padding: 24px; text-align: center; }
+
+.lead-form-section { margin-top: 28px; background: #fff; color: #001533; border-radius: 8px; padding: 20px; }
+
+.faq { margin-top: 28px; background: #fff; color: #001533; border-radius: 8px; padding: 20px; }
+.faq details { background: #f8f8f8; margin-bottom: 10px; padding: 12px 14px; border-radius: 6px; }
+.faq summary { cursor: pointer; font-weight: 600; }
+
+/* Футер: лёгкие улучшения */
+.footer-section.contact-brief a { color: #001533; text-decoration: none; }
+.footer-section.contact-brief a:hover { text-decoration: underline; }
+.footer-section .social-icons a { margin-right: 8px; font-size: 1.2em; color: #001533; }
+.footer-section .social-icons a:hover { color: #0652A8; }
+.footer-section ul li { margin-bottom: 8px; }
+
+/* Override: делаем заголовок в герое белым поверх .container h1 */
+.container .home-hero h1 { color: #ffffff; }
+/* Стили для Hero секции */
+.hero-image {
+    width: 100%;
+    height: 300px;
+    background-image: url("{% static 'company_website/img/hero.jpg' %}");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #84E6FC; /* Светло-голубой для текста */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Стили для экрана загрузки (splash screen) */
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #001533; /* Очень темный синий */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    transition: opacity 1s ease-out;
+    flex-direction: column; /* Для размещения логотипа и процентов по вертикали */
+}
+
+.loading-logo {
+    width: 250px; /* Еще больше увеличена ширина логотипа на экране загрузки */
+    height: auto;
+    animation: pulse 1.5s infinite alternate; /* Анимация пульсации */
+    margin-bottom: 20px; /* Отступ между логотипом и процентами */
+}
+
+#loading-percentage {
+    color: #A9F7FF; /* Очень светлый синий */
+    font-size: 2em;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+@keyframes pulse {
+    from { transform: scale(1); opacity: 0.8; }
+    to { transform: scale(1.1); opacity: 1; }
+}
+
+/* Стили для секций контента (например, на главной странице) */
+.content-section {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.content-section div {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f8f8; /* Очень светлый фон для секций контента */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    color: #001533; /* Цвет текста в секциях контента на темно-синий */
+}
+
+.content-section div h2 {
+    color: #001533; /* Цвет заголовков H2 в секциях контента на темно-синий */
+}
+
+.content-section div p {
+    color: #001533; /* Цвет текста параграфов в секциях контента */
+}
+
+.content-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Стили для заголовков и параграфов внутри основного контейнера (для страницы "О нас") */
+.container h1 {
+    color: #001533; /* Цвет заголовков H1 в контейнере на темно-синий */
+}
+
+.container p {
+    color: #001533; /* Цвет текста параграфов в контейнере на темно-синий */
+}
+
+/* Стили для страницы "Личный кабинет" */
+.personal-cabinet-content {
+    padding: 30px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff; /* Белый фон для контента личного кабинета */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.personal-cabinet-content h1 {
+    color: #002667; /* Темно-синий для основного заголовка */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.payment-section, .contact-form-section {
+    background-color: #f8f8f8; /* Светло-серый фон для секций */
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.payment-section h2, .contact-form-section h2 {
+    color: #002667; /* Темно-синий для заголовков секций */
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #39CCE6; /* Бирюзовая полоска под заголовком */
+    padding-bottom: 10px;
+}
+
+.payment-form label, .contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #001533; /* Очень темный синий для меток */
+}
+
+.payment-form input[type="text"], .payment-form input[type="email"], .payment-form input[type="tel"],
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="tel"] {
+    width: calc(100% - 20px); /* Учитываем отступы */
+    padding: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #0652A8; /* Синяя рамка */
+    border-radius: 5px;
+    font-size: 1em;
+    color: #001533; /* Цвет текста ввода */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.payment-form input[type="text"]:focus, .payment-form input[type="email"]:focus, .payment-form input[type="tel"]:focus,
+.contact-form input[type="text"]:focus, .contact-form input[type="email"]:focus, .contact-form input[type="tel"]:focus {
+    border-color: #2196DB; /* Яркий синий при фокусе */
+    box-shadow: 0 0 8px rgba(33, 150, 219, 0.3);
+    outline: none;
+}
+
+/* Стили для placeholder */
+.payment-form input::placeholder, .contact-form input::placeholder {
+    color: #0652A8; /* Более темный синий для плейсхолдера */
+    opacity: 0.7; /* Прозрачность плейсхолдера */
+}
+
+.payment-form button, .contact-form button {
+    background-color: #2196DB; /* Яркий синий для кнопок */
+    color: #A9F7FF; /* Очень светлый синий для текста кнопки */
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.payment-form button:hover, .contact-form button:hover {
+    background-color: #0652A8; /* Более темный синий при наведении */
+    transform: translateY(-2px);
+}
+
+.payment-section h3 {
+    color: #002667; /* Темно-синий для заголовка методов оплаты */
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px dashed #84E6FC; /* Светло-голубая пунктирная линия */
+    padding-bottom: 8px;
+}
+
+.payment-methods {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.payment-methods li {
+    background-color: transparent; /* Убираем фон */
+    color: #001533; /* Очень темный синий для текста метода оплаты */
+    padding: 5px 0; /* Уменьшаем отступы */
+    border-radius: 0; /* Убираем скругление углов */
+    box-shadow: none; /* Убираем тень */
+    font-weight: normal; /* Обычный шрифт */
+    flex-grow: 0; /* Отключаем растягивание */
+    text-align: left; /* Выравнивание текста по левому краю */
+    border: none; /* Убираем рамку */
+}
+
+/* Стили для иконки личного кабинета в навигации */
+.personal-cabinet-link i {
+    margin-right: 5px;
+    color: #001533; /* Очень темный синий для иконки */
+}
+
+.personal-cabinet-link:hover i {
+    color: #0652A8; /* Более темный синий при наведении */
+}
+
+/* Стили для кнопки "Карта сайта" */
+.sitemap-button i {
+    margin-right: 5px;
+    color: #001533; /* Очень темный синий для иконки */
+}
+
+.sitemap-button:hover i {
+    color: #0652A8; /* Более темный синий при наведении */
+}
+
+/* Стили для модального окна "Карта сайта" */
+.sitemap-modal {
+    display: none; /* Модальное окно скрыто по умолчанию */
+    position: fixed; /* Оставаться на месте */
+    z-index: 10000; /* Поверх всего */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Включить прокрутку, если содержимое слишком большое */
+    background-color: rgba(0, 21, 51, 0.8); /* Полупрозрачный темно-синий фон */
+    backdrop-filter: blur(5px); /* Размытие фона */
+    -webkit-backdrop-filter: blur(5px); /* Для Safari */
+    /* justify-content: center; */ /* Удаляем, так как центрируем содержимое абсолютно */
+    /* align-items: center; */ /* Удаляем, так как центрируем содержимое абсолютно */
+}
+
+.sitemap-modal-content {
+    background-color: #fff; /* Белый фон */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    max-width: 90%;
+    max-height: 90vh; /* Ограничиваем высоту для скролла */
+    overflow-y: auto;
+    position: absolute; /* Абсолютное позиционирование */
+    top: 50%; /* Сдвигаем на 50% от верхнего края */
+    left: 50%; /* Сдвигаем на 50% от левого края */
+    transform: translate(-50%, -50%); /* Смещаем обратно на половину своей ширины/высоты для точного центрирования */
+    color: #001533; /* Темно-синий текст */
+}
+
+.sitemap-modal-content h2 {
+    color: #002667; /* Темно-синий для заголовка */
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #39CCE6; /* Бирюзовая полоска */
+    padding-bottom: 10px;
+}
+
+.sitemap-sections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.sitemap-column {
+    flex: 1;
+    min-width: 250px;
+    padding: 15px;
+    background-color: #f8f8f8; /* Светло-серый фон для колонок */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.sitemap-column h3 {
+    color: #002667; /* Темно-синий для заголовков колонок */
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #84E6FC; /* Светло-голубая полоска */
+    padding-bottom: 5px;
+}
+
+.sitemap-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sitemap-column li {
+    margin-bottom: 8px;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+.sitemap-column a {
+    color: #001533; /* Темно-синий для ссылок */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.sitemap-column a:hover {
+    color: #2196DB; /* Яркий синий при наведении */
+    text-decoration: underline;
+}
+
+.close-modal {
+    color: #001533; /* Темно-синий для кнопки закрытия */
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: #39CCE6; /* Бирюзовый при наведении/фокусе */
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Медиа-запросы для адаптивности модального окна */
+@media (max-width: 768px) {
+    .sitemap-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+    .sitemap-column {
+        min-width: 80%;
+    }
+    .sitemap-modal-content {
+        padding: 20px;
+    }
+    .close-modal {
+        font-size: 30px;
+        top: 10px;
+        right: 20px;
+    }
+}
+
+.container .home-hero p { color: #ffffff; }

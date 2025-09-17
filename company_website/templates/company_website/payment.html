@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Оплата услуг{% endblock %}
+
+{% block content %}
+<div class="personal-cabinet-content">
+    <h1>Оплата услуг</h1>
+    <div class="payment-section">
+        <h2>Онлайн-оплата</h2>
+        <div class="payment-form">
+            <label for="contract-number">Номер договора</label>
+            <input type="text" id="contract-number" placeholder="Введите номер договора">
+
+            <label for="amount">Сумма</label>
+            <input type="text" id="amount" placeholder="Введите сумму">
+
+            <button class="pay-button">Оплатить</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

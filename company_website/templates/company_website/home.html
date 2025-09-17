@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Главная{% endblock %}
+
+{% block content %}
+    <section class="home-hero">
+        <h1>Комплексная безопасность для дома и бизнеса</h1>
+        <p>24/7 мониторинг, профессиональное реагирование, современные технологии.</p>
+        <div class="home-actions">
+            <a class="top-link" href="{% url 'services' %}">Выбрать решение</a>
+            <a class="top-link" href="{% url 'contact' %}">Заказать консультацию</a>
+        </div>
+    </section>
+
+    <section class="quick-services">
+        <h2>Что мы делаем лучше других</h2>
+        <div class="services-grid">
+            <a class="service-card" href="{% url 'service_apartment_security' %}">
+                <h2>Охрана квартир</h2>
+                <p>Сигнализация, датчики, мониторинг и выезд группы.</p>
+            </a>
+            <a class="service-card" href="{% url 'service_cottage_security' %}">
+                <h2>Охрана коттеджей</h2>
+                <p>Периметр, видеонаблюдение и комплексная защита.</p>
+            </a>
+            <a class="service-card" href="{% url 'service_business_security' %}">
+                <h2>Охрана бизнеса</h2>
+                <p>Офисы, магазины, склады и производство.</p>
+            </a>
+            <a class="service-card" href="{% url 'service_fire_alarm' %}">
+                <h2>Пожарная сигнализация</h2>
+                <p>Проект, монтаж, сервис и регламентная поддержка.</p>
+            </a>
+            <a class="service-card" href="{% url 'service_access_control' %}">
+                <h2>Управление доступом</h2>
+                <p>СКУД: карты, брелоки, турникеты, интеграции.</p>
+            </a>
+            <a class="service-card" href="{% url 'service_monitoring' %}">
+                <h2>Пультовая охрана</h2>
+                <p>Круглосуточный мониторинг и реагирование.</p>
+            </a>
+        </div>
+    </section>
+
+    <section class="facts" id="facts">
+        <h2>Кодекс на языке фактов</h2>
+        <ul class="facts-list">
+            <li><strong>24/7</strong> — служба мониторинга и поддержка клиентов</li>
+            <li><strong>15 минут</strong> — среднее время реагирования группы</li>
+            <li><strong>Топ‑оборудование</strong> — только проверенные производители</li>
+            <li><strong>Сервис</strong> — гарантия и обслуживание по договору</li>
+        </ul>
+    </section>
+
+    <section class="process">
+        <h2>Как мы работаем</h2>
+        <div class="steps">
+            <div class="step"><span class="num">1</span><h3>Аудит</h3><p>Обследуем объект и формируем ТЗ.</p></div>
+            <div class="step"><span class="num">2</span><h3>Проект</h3><p>Подбираем решения и согласуем смету.</p></div>
+            <div class="step"><span class="num">3</span><h3>Монтаж</h3><p>Устанавливаем и запускаем систему.</p></div>
+            <div class="step"><span class="num">4</span><h3>Мониторинг</h3><p>Подключаем к пульту и обеспечиваем реагирование.</p></div>
+        </div>
+    </section>
+
+    <section class="team">
+        <h2>Профессиональная команда</h2>
+        <p>Инженеры‑проектировщики, монтажные бригады, диспетчеры и группа быстрого реагирования — каждый отвечает за результат.</p>
+    </section>
+
+    <section class="lead-form-section">
+        <h2>Отправьте заявку и получите предложение</h2>
+        <form class="contact-form" method="post" action="{% url 'contact' %}">
+            {% csrf_token %}
+            <label for="home-name">Ваше имя*</label>
+            <input type="text" id="home-name" name="name" required>
+
+            <label for="home-email">Ваш e-mail*</label>
+            <input type="email" id="home-email" name="email" required>
+
+            <label for="home-phone">Ваш номер телефона*</label>
+            <input type="tel" id="home-phone" name="phone" required>
+
+            <button type="submit" class="send-button">Отправить</button>
+        </form>
+    </section>
+
+    <section class="faq">
+        <h2>FAQ</h2>
+        <div class="faq-list">
+            <details>
+                <summary>Как быстро вы устанавливаете систему?</summary>
+                <p>Часто — в день обращения. Срок зависит от объёма работ.</p>
+            </details>
+            <details>
+                <summary>Кто реагирует на тревоги?</summary>
+                <p>Собственная группа и/или партнеры; время реагирования — по договору.</p>
+            </details>
+            <details>
+                <summary>Можно ли подключить существующее оборудование?</summary>
+                <p>Да, если оборудование совместимо. Предварительно проведем аудит.</p>
+            </details>
+        </div>
+    </section>
+{% endblock %}

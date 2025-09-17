@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Личный кабинет{% endblock %}
+
+{% block content %}
+    <div class="personal-cabinet-content">
+        <h1>Личный кабинет</h1>
+
+        <div class="payment-section">
+            <h2>Оплата услуг</h2>
+            <div class="payment-form">
+                <label for="contract-number">Номер договора</label>
+                <input type="text" id="contract-number" placeholder="Введите номер договора">
+                
+                <label for="amount">Сумма</label>
+                <input type="text" id="amount" placeholder="Введите сумму">
+                
+                <button class="pay-button">Оплатить</button>
+            </div>
+
+            <h3>Можно оплатить:</h3>
+            <ul class="payment-methods">
+                <li>Банковской картой</li>
+                <li>Электронными деньгами</li>
+                <li>Переводом через Contact</li>
+                <li>Через терминалы и салоны связи</li>
+                <li>Через интернет-банкинг</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

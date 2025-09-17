@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Наши услуги{% endblock %}
+
+{% block content %}
+    <h1>Наши услуги</h1>
+    {% if services_list %}
+        <div class="services-grid">
+            {% for service in services_list %}
+                <div class="service-card">
+                    <h2>{{ service.title }}</h2>
+                    <p>{{ service.description }}</p>
+                    <a href="#" class="learn-more-button">Подробнее</a>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>Услуги пока не добавлены.</p>
+    {% endif %}
+{% endblock %}
